@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    background: white;
+    height: 100vh;
+}
+.dice-container {
+    text-align: center;
+    color: white;
+    background: linear-gradient(120deg, rgb(0, 0, 0), rgb(49, 49, 49));
+    margin-top: 150px;
+    padding: 40px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px black;
+    transition: 0.5s ease;
+}
+.dice-container:hover {
+    transform: scale(1.02)translateY(-4px);
+}
+.input-container{
+    display: inline-flex;
+}
+.input-container input {
+    width: 100%;
+    margin: auto;
+    margin-right: 0;
+    text-align: center;
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.input-container input:focus {
+    outline: none;
+}
+.input-container button {
+    margin: auto;
+    margin-left: 0;
+    background-color: green;
+    color: aliceblue;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+.input-container button:hover {
+    background-color: rgb(0, 184, 0);
+    color: white;
+    transform: scale(1.03);
+}
+.input-container input,
+.input-container button {
+    padding: 10px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.dice-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 200px; /* 3 × 50px + 2 × 10px gap */
+    margin: 20px auto;
+    justify-content: center;
+}
+.dice-images img{
+    width: 60px;
+    height: auto; /* Optional: if you want square dice */
+    background-color: aliceblue;
+    border-radius: 12px;
+    transition: 0.4s ease;
+}
+.dice-images img:hover{
+    transform: scale(1.1)translateY(-5px);
+}
+
+@keyframes roll {
+    0% {
+        transform: rotate(0deg) scale(0.5);
+        opacity: 0.8;
+    }
+    50% {
+        transform: rotate(360deg) scale(1.4);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(720deg) scale(1);
+        opacity: 2;
+    }
+}
+
+.dice-roll-animation {
+    animation: roll 0.9s ease;
+}

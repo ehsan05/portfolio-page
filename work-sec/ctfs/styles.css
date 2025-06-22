@@ -1,0 +1,625 @@
+/* ==================== CSS RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background-color: #121212;
+}
+
+/* ==================== VARIABLES ==================== */
+:root {
+  --main-color: #00ff73;
+  --bg-color: #121212;
+  --text-color: #fff;
+  --hover-color: #00ff73;
+  --transition: 0.3s ease-in-out;
+}
+
+/* ==================== BLUR LAYER ==================== */
+.blur-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.blur-layer::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  transform: scale(1.05);
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.main-content {
+  position: relative;
+  z-index: 1;
+  margin-top: 35px;
+}
+
+/* ==================== HEADER ==================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: var(--bg-color);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--main-color);
+  text-decoration: none;
+}
+/* ==================== NAVBAR & SIDE MENU ==================== */
+.side-menu.open ul a {
+  text-decoration: none;
+  color: white;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100vh;
+  padding-top: 60px;
+  background-color: #1e1e1e;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  transition: right 0.3s ease-in-out;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu li {
+  padding: 15px 20px;
+}
+
+.side-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.side-menu a:hover,
+.side-menu a.active {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
+.side-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--hover-color);
+  transition: width 0.3s ease;
+}
+
+.side-menu a:hover::after,
+.side-menu a.active::after {
+  width: 100%;
+}
+.hamburger {
+  
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  z-index: 1100;
+}
+
+.hamburger-box {
+  width: 30px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 30px;
+  height: 2px;
+  background-color: var(--text-color);
+  border-radius: 4px;
+  position: absolute;
+  transition: var(--transition);
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+.hamburger.active .hamburger-inner {
+  background-color: transparent;
+}
+
+.hamburger.active .hamburger-inner::before {
+  transform: translateY(10px) rotate(45deg);
+  background-color: var(--main-color);
+}
+
+.hamburger.active .hamburger-inner::after {
+  transform: translateY(-10px) rotate(-45deg);
+  background-color: var(--main-color);
+}
+
+
+/* ==================== BUTTON ==================== */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0.75rem 2rem;
+  background: var(--main-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  transform: scale(1.1);
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+/* ==================== CTF PAGE STYLES ==================== */
+.services {
+  background-color: #12121250;
+  padding: 4rem 2rem;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 111px;
+}
+
+.services h2 {
+  font-size: 2rem;
+  padding: 40px;
+}
+
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+}
+
+.sub-heading {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+.sub-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--main-color);
+}
+
+/* Learning Paths Styles */
+.paths-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.path-box {
+  background-color: #272727;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+  text-align: left;
+  border-left: 4px solid var(--main-color);
+}
+
+.path-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 255, 115, 0.1);
+}
+
+.path-header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: rgba(0, 255, 115, 0.1);
+  border-bottom: 1px solid rgba(0, 255, 115, 0.2);
+}
+
+.path-header i {
+  font-size: 2rem;
+  color: var(--main-color);
+  margin-right: 1rem;
+}
+
+.path-header h4 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.path-content {
+  padding: 1.5rem;
+}
+
+.path-content p {
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.skills-list {
+  list-style: none;
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills-list li {
+  background-color: rgba(0, 255, 115, 0.1);
+  color: var(--main-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.completion-badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* CTF Challenges Styles */
+.ctf-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.ctf-box {
+  background-color: #272727;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+  text-align: left;
+}
+
+.ctf-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 255, 115, 0.1);
+}
+
+.ctf-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: rgba(0, 255, 115, 0.1);
+  border-bottom: 1px solid rgba(0, 255, 115, 0.2);
+  position: relative;
+}
+
+.ctf-header i {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  margin-right: 1rem;
+}
+
+.ctf-header h4 {
+  font-size: 1.1rem;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.difficulty {
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.difficulty.easy {
+  background-color: rgba(0, 255, 115, 0.2);
+  color: var(--main-color);
+}
+
+.difficulty.medium {
+  background-color: rgba(255, 165, 0, 0.2);
+  color: orange;
+}
+
+.difficulty.hard {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: #ff5555;
+}
+
+.ctf-content {
+  padding: 1.5rem;
+}
+
+.ctf-content p {
+  margin-bottom: 1rem;
+  color: #ccc;
+  min-height: 60px;
+}
+
+.ctf-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.ctf-skills span {
+  background-color: rgba(0, 255, 115, 0.1);
+  color: var(--main-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.ctf-meta {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.ctf-meta i {
+  margin-right: 0.3rem;
+}
+
+/* OSCP Progress Styles */
+.progress-container {
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.progress-track {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.progress-track::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #333;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.progress-step {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 20%;
+}
+
+.progress-step span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #999;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.progress-step p {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.progress-step.completed span {
+  background-color: var(--main-color);
+  color: #121212;
+}
+
+.progress-step.completed p {
+  color: #fff;
+}
+
+.progress-step.active span {
+  background-color: var(--main-color);
+  color: #121212;
+  animation: pulse 2s infinite;
+}
+
+.progress-step.active p {
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 115, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 255, 115, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 115, 0);
+  }
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+  background-color: #111;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.footer-iconTop a {
+  color: var(--main-color);
+  font-size: 1.5rem;
+}
+
+.footer-iconTop a:hover {
+  color: #fff;
+}
+
+.footer-text {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .paths-container,
+  .ctf-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .progress-step p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .services h2 {
+    font-size: 1.5rem;
+    padding: 20px;
+  }
+  
+  .paths-container,
+  .ctf-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .progress-track {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  
+  .progress-track::before {
+    display: none;
+  }
+  
+  .progress-step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .progress-step p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .path-header,
+  .ctf-header {
+    padding: 1rem;
+  }
+  
+  .path-content,
+  .ctf-content {
+    padding: 1rem;
+  }
+}
