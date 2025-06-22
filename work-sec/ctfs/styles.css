@@ -22,35 +22,22 @@ body {
 }
 
 /* ==================== BLUR LAYER ==================== */
-.blur-layer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  overflow: hidden;
-}
-
-.blur-layer::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-
-  background-size: cover;
-  background-position: center;
-  filter: blur(5px);
-  transform: scale(1.05);
-}
 
 /* ==================== MAIN CONTENT ==================== */
 .main-content {
   position: relative;
   z-index: 1;
   margin-top: 35px;
+}
+
+
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
 }
 
 /* ==================== HEADER ==================== */
@@ -276,7 +263,7 @@ body {
 .paths-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
+  gap: 4rem;
   margin-top: 2rem;
 }
 
@@ -352,8 +339,8 @@ body {
 /* CTF Challenges Styles */
 .ctf-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(344px, 1fr));
+  gap: 4rem;
   margin-top: 2rem;
 }
 

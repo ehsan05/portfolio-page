@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "nb_sides": 5
         }
       },
-      "opacity": {
+      "opacity": { 
         "value": 0.5,
         "random": false,
         "anim": {

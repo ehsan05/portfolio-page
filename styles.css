@@ -39,29 +39,12 @@ body {
   z-index: -3;
 }
 
-/* ==================== BLUR LAYER ==================== */
-.blur-layer {
-  position: fixed;
-  top: 0;
-  left: 0;
+.particles {
+  position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -2;
+  background: transparent;
   overflow: hidden;
-}
-
-.blur-layer::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-
-  background-size: cover;
-  background-position: center;
-  filter: blur(5px) brightness(0.6);
-  transform: scale(1.05);
 }
 
 /* ==================== MAIN CONTENT ==================== */
@@ -939,11 +922,11 @@ body {
   }
   
   .title-animate {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
   
   .home-subtitle {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
   
   .profile-animation {
