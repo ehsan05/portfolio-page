@@ -945,4 +945,13 @@ body {
   .contact-container {
     grid-template-columns: 1fr;
   }
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px;
+    font-size: 0.7rem;
+    }
+  .cta-buttons{
+    display: flex;
+    flex-direction: row;}
+  
 }
