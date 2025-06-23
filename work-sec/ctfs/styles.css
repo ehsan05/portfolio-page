@@ -597,7 +597,10 @@ body {
 @media (max-width: 480px) {
   .btn{
     padding: 10px;
-    font-size: 0.7rem;
+    font-size: 10px;
+  }
+  .completion-badge span{
+    font-size: 10px;
   }
   .sub-heading{
     font-size: 1.2rem;
