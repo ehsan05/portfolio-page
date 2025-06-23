@@ -595,9 +595,23 @@ body {
 }
 
 @media (max-width: 480px) {
-  .btn {
-    padding: 0.5rem 1.5rem;
-    font-size: 0.9rem;
+  .btn{
+    padding: 10px;
+    font-size: 0.7rem;
+  }
+  .sub-heading{
+    font-size: 1.2rem;
+  }
+  .path-content {
+    font-size: 12px;
+    height: auto;
+  }
+  .intro-text{
+    font-size: 12px;
+  }
+  .services .heading {
+    font-size: 1.1rem;
+    font-weight: bold;
   }
   
   .path-header,

@@ -732,19 +732,65 @@ body {
   .progress-container {
     grid-template-columns: 1fr;
   }
+  .certification-body p {
+    font-size: 12px;
+  }
+  
   
   .heading {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
   
   .subtitle {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+  }
+  .category-title {
+    font-size: 1.1rem;
   }
   
   .certification-header {
     flex-direction: column;
     text-align: center;
   }
+  .certification-header h4 {
+    font-size: 0.8rem;
+  }
+   .certification-header p {
+    font-size: 0.7rem;
+  }
+  .certification-body li{
+    font-size: 10px;
+    padding: 5px;
+  }
+  .certification-footer .btn-view {
+    padding: 8px;
+    font-size: 12px;
+  }
+  .certification-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cert-modal-content {
+  position: relative;
+  background-color: #030303e7;
+  padding: 2rem;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  border: 1px solid #00cc5f;
+  box-shadow: 2px 2px 10px #000000;
+}
+
+.cert-modal-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+  border-radius: 6px;
+}
+  
   
   .certification-logo {
     margin-bottom: 1rem;
