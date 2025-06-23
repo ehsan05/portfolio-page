@@ -947,8 +947,8 @@ body {
   }
   .btn-primary,
   .btn-secondary {
-    padding: 10px;
-    font-size: 0.7rem;
+    padding: 14px;
+    font-size: 0.9rem;
     }
   .cta-buttons{
     display: flex;
